@@ -25,7 +25,7 @@ namespace Cinema.API.Controllers
         }
 
         [HttpGet("{hallId}")]
-        public IActionResult GetHallById(int hallId)
+        public IActionResult GetHallById([FromRoute]int hallId)
         {
             var hall = hallService.GetHallById(hallId);
 
@@ -38,7 +38,7 @@ namespace Cinema.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddHall(Hall hall)
+        public IActionResult AddHall([FromBody]Hall hall)
         {
             hallService.AddHall(hall);
 
@@ -47,7 +47,7 @@ namespace Cinema.API.Controllers
 
 
         [HttpPut("{hallId}")]
-        public IActionResult UpdateHall(int hallId, Hall updatedHall)
+        public IActionResult UpdateHall([FromRoute]int hallId, [FromBody]Hall updatedHall)
         {
             var hall = hallService.GetHallById(hallId);
 
@@ -62,7 +62,7 @@ namespace Cinema.API.Controllers
         }
 
         [HttpDelete("{hallId}")]
-        public IActionResult DeleteHall(int hallId)
+        public IActionResult DeleteHall([FromRoute]int hallId)
         {
             var hall = hallService.GetHallById(hallId);
 
@@ -78,7 +78,7 @@ namespace Cinema.API.Controllers
 
         // GET: api/hall/5/seats
         [HttpGet("{hallId}/seats")]
-        public IActionResult GetSeatsByHall(int hallId)
+        public IActionResult GetSeatsByHall([FromRoute] int hallId)
         {
             var hall = hallService.GetHallById(hallId);
 
@@ -94,7 +94,7 @@ namespace Cinema.API.Controllers
 
         // POST: api/hall/5/seats
         [HttpPost("{hallId}/seats")]
-        public IActionResult AddSeat(int hallId, Seat seat)
+        public IActionResult AddSeat([FromRoute]int hallId, [FromBody]Seat seat)
         {
             var hall = hallService.GetHallById(hallId);
 
