@@ -20,6 +20,9 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<MovieService>();
 
+builder.Services.AddScoped<IHallRepository, HallRepository>();
+builder.Services.AddScoped<HallService>();
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
