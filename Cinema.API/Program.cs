@@ -23,6 +23,9 @@ builder.Services.AddScoped<MovieService>();
 builder.Services.AddScoped<IHallRepository, HallRepository>();
 builder.Services.AddScoped<HallService>();
 
+builder.Services.AddScoped<IShowRepository, ShowRepository>();
+builder.Services.AddScoped<ShowService>();
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
